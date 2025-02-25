@@ -1,4 +1,3 @@
-
 import "./globals.css";
 
 import type { Metadata } from "next";
@@ -8,7 +7,6 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
-
 
 export const metadata: Metadata = {
   title: "FSW Donalds",
@@ -22,11 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} antialiased`}
-      >
-        {children}
-      </body>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <body className={`${poppins.className} antialiased`}>{children}</body>
     </html>
   );
 }
