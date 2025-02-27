@@ -14,13 +14,17 @@ interface RestaurantHeaderProps {
 const RestaurantHeader = ({ restaurant }: RestaurantHeaderProps) => {
   const router = useRouter();
 
+  const handleBackClick = () => {
+    router.back();
+  }
+
   return (
     <div className="relative h-[250px] w-full">
       <Button
         className="absolute left-4 top-4 z-50 rounded-full"
         variant="secondary"
         size="icon"
-        onClick={() => router.back()}
+        onClick={handleBackClick}
       >
         <ChevronLeftIcon />
       </Button>
