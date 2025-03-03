@@ -20,13 +20,17 @@ const ProductPage = async ({params}:ProductPageProps) => {
   if(!product || !restaurant) {
     return notFound()
   }
+
+  if(restaurant.slug.toUpperCase() !== slug.toUpperCase()) {
+    return notFound()
+  }
  
 
   return (  
-    <>
+    <div className="flex flex-col h-full">
       <ProductHeader product={product} />
       <ProductDetails product={product} restaurant={restaurant}/>
-    </>
+    </div>
 
   );
 }
