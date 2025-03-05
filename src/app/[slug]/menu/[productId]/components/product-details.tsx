@@ -104,7 +104,6 @@ const ProductDetails = ({ restaurant, product }: ProductDetailsProps) => {
         </Button>
       </div>  
       <CartSheet/>
-xx
     </>
   );
 };
