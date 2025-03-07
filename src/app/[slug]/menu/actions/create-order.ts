@@ -1,5 +1,6 @@
 "use server";
 import { ConsumptionMethod } from "@prisma/client";
+import { redirect } from "next/navigation";
 
 import { db } from "@/lib/prisma";
 
@@ -56,4 +57,6 @@ export const createOrder = async (input: CreateOrderInput) => {
       restaurantId: restaurant.id,
     },
   });
+
+  redirect(`/${input.slug}/orders`);
 };
