@@ -24,6 +24,18 @@ interface OrderListProps {
   }>[];
 }
 const OrderList = ({ orders }: OrderListProps) => {
+
+  const getStatusLabel = (status: OrderStatus) => {
+    if(status === OrderStatus.FINISHED) {
+      return 'Finalizado'
+    } else if(status === OrderStatus.IN_PREPARATION) {
+      return 'Em preparo'
+    } else if(status === OrderStatus.PENDING) {
+      return 'Pendente'
+    } else {
+      return ''
+    }
+  }
   return (
     <div className="space-y-6 p-6">
       <Button size="icon" variant="secondary" className="rounded-full">
@@ -38,7 +50,7 @@ const OrderList = ({ orders }: OrderListProps) => {
         <Card key={order.id}>
           <CardContent className="space-y-4 p-5">
             <div className={`w-fit rounded-full px-2 py-1 text-xs font-semibold ${order.status === OrderStatus.FINISHED ? 'bg-green-400 text-white' : 'bg-gray-200 text-gray-500'}`}>
-              Em preparo
+              {getStatusLabel(order.status)}
             </div>
             <div className="flex items-center gap-2">
               <div className="relative h-5 w-5">
