@@ -115,7 +115,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                   <FormItem>
                     <FormLabel>Seu nome</FormLabel>
                     <FormControl>
-                      <Input placeholder="Digie seu nome..." {...field} />
+                      <Input placeholder="Digite seu nome..." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
